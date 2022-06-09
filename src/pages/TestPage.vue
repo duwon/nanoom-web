@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page padding>
     <q-card>TEST PAGE</q-card>
   </q-page>
 </template>

@@ -1,11 +1,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import PostWriteComponent from 'src/components/board/PostWriteComponent.vue'
+import PostListcomponent from 'src/components/board/PostList.vue'
 
 export default defineComponent({
-  name: 'PostWritePage',
-  components: { PostWriteComponent },
+  name: 'PostListePage',
+  components: { PostListcomponent },
   setup () {
     return { }
   }
@@ -14,6 +14,6 @@ export default defineComponent({
 
 <template>
   <q-page padding>
-    <PostWriteComponent />
+    <PostListcomponent />
   </q-page>
 </template>
