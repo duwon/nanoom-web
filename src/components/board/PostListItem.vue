@@ -16,6 +16,18 @@
       >
         {{ post.content }}
       </q-item-label>
+      <q-item-label
+        caption
+        lines="1"
+      >
+        {{ post.createdAt }}
+      </q-item-label>
+      <q-item-label
+        caption
+        lines="1"
+      >
+        {{ post.updatedAt }}
+      </q-item-label>
     </q-item-section>
 
     <q-item-section side>
@@ -29,10 +41,11 @@
 
 <script setup lang="ts">
 import { defineProps, computed } from 'vue'
-import { QueryDocumentSnapshot, DocumentData } from 'firebase/firestore'
+import { QueryDocumentSnapshot } from 'firebase/firestore'
+import { Post } from 'src/models/Post'
 
 const props = defineProps<{
-  item: QueryDocumentSnapshot<DocumentData>
+  item: QueryDocumentSnapshot<Post>
 }>()
 const post = computed(() => props.item.data())
 </script>

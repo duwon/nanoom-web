@@ -9,7 +9,7 @@
     "dev": "quasar dev",
     "build": "quasar build",
     "build:pwa": "quasar build -m pwa",
-    "emul": "firebase emulators:start",
+    "emul": "firebase emulators:start --import=./firebase-data --export-on-exit",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },

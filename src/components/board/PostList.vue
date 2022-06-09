@@ -74,24 +74,27 @@
 <script defalt lang="ts">
 import { ref, defineComponent, onMounted } from 'vue'
 import PostListItemComponent from './PostListItem.vue'
-import { db } from 'boot/firebase'
-import { collection, query, getDocs, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore'
+import { QueryDocumentSnapshot } from 'firebase/firestore'
+import { Post, getPosts } from 'src/models/Post'
 
 export default defineComponent({
   name: 'PostListComponet',
   components: { PostListItemComponent },
   setup () {
     // 변수 정의
-    const items = ref<QueryDocumentSnapshot<DocumentData>[]>([])
+    const items = ref<QueryDocumentSnapshot<Post>[]>([])
 
     const getData = async () => {
-      const q = query(collection(db, 'posts'))
-      const querySnapshot = await getDocs(q)
-      items.value = querySnapshot.docs
+      // const q = query(collection(db, 'posts'))
+      // const querySnapshot = await getDocs(q)
+      // items.value = querySnapshot.docs
       // querySnapshot.forEach((doc) => {
       //  // doc.data() is never undefined for query doc snapshots
       //  console.log(doc.id, ' => ', doc.data())
       // })
+
+      const querySnapshot = await getPosts()
+      items.value = querySnapshot.docs
     }
 
     onMounted(getData)
