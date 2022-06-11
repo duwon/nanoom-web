@@ -74,7 +74,7 @@ const provider = new GoogleAuthProvider()
     @click="signInWithPopup(auth, provider)"
   >
     <q-avatar
-      icon="mdi-login"
+      icon="mdi-account"
       size="32px"
     />
   </q-btn>
