@@ -3,7 +3,7 @@ import {
   Timestamp,
   doc,
   setDoc,
-  collection, query, getDocs
+  collection, query, getDocs, deleteDoc
 } from 'firebase/firestore'
 import { db } from 'boot/firebase'
 
@@ -46,4 +46,14 @@ export const getPosts = () => {
   const ref = collection(db, 'posts').withConverter(converter)
   const q = query(ref)
   return getDocs(q)
+}
+
+export const updatePost = (id: string, content: string) => {
+  const ref = doc(db, 'posts', id).withConverter(converter)
+  return setDoc(ref, { content }, { merge: true })
+}
+
+export const deletePost = (id: string) => {
+  const ref = doc(db, 'posts', id)
+  return deleteDoc(ref)
 }
