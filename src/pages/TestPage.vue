@@ -15,8 +15,9 @@
 
   <q-page
     padding
+    class="app"
   >
-    <div class="app">
+    <div>
       <h1> TEST PAGE </h1>
       <h2> {{ animal }} </h2>
       <h3> {{ animal }}은 {{ food }}을 좋아합니다.</h3>

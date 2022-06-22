@@ -70,8 +70,6 @@
 
 <script defalt lang="ts">
 import { ref, defineComponent } from 'vue'
-import { db } from 'boot/firebase'
-import { doc, setDoc } from 'firebase/firestore'
 import { useRouter } from 'vue-router'
 import editor from './EditorComponent.vue'
 import { Post, setPost } from 'src/models/Post'
@@ -89,12 +87,6 @@ export default defineComponent({
       content,
 
       async onSubmit () {
-        await setDoc(doc(db, 'posts', title.value), {
-          title: title.value,
-          content: content.value,
-          createdAt: new Date(),
-          updatedAt: new Date()
-        })
         await setPost(new Post(title.value, content.value))
         await router.push('/list')
       },

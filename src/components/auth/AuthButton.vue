@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import {} from 'vue'
+import { } from 'vue'
 import { auth } from 'src/boot/firebase'
 import {
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect,
   signOut
 } from 'firebase/auth'
-import { firebaseUser, useAuth } from 'src/composables/useAuth'
+import { firebaseUser, useAuth, nanoomUser } from 'src/composables/useAuth'
 
 useAuth()
 const provider = new GoogleAuthProvider()
@@ -15,7 +15,7 @@ const provider = new GoogleAuthProvider()
 
 <template>
   <q-btn
-    v-if="firebaseUser"
+    v-if="nanoomUser"
     round
     color="info"
   >
@@ -34,6 +34,17 @@ const provider = new GoogleAuthProvider()
               </q-item-section>
               <q-item-section>
                 <q-item-label>이름</q-item-label>
+                <q-item-label caption>
+                  {{ nanoomUser?.name }}
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section avatar>
+                <q-icon name="mdi-account" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>닉네임</q-item-label>
                 <q-item-label caption>
                   {{ firebaseUser.displayName }}
                 </q-item-label>
@@ -71,11 +82,36 @@ const provider = new GoogleAuthProvider()
     v-else
     round
     color="info"
-    @click="signInWithPopup(auth, provider)"
   >
     <q-avatar
       icon="mdi-account"
       size="32px"
-    />
+    >
+      <q-menu>
+        <q-card align="left">
+          <q-card-actions>
+            <q-btn
+              icon="mdi-login"
+              label="로그인"
+              flat
+              color="primary"
+              class="col"
+              @click="signInWithRedirect(auth, provider)"
+            />
+          </q-card-actions>
+
+          <q-card-actions>
+            <q-btn
+              icon="mdi-account"
+              label="회원가입"
+              flat
+              color="primary"
+              class="col"
+              to="/user/register"
+            />
+          </q-card-actions>
+        </q-card>
+      </q-menu>
+    </q-avatar>
   </q-btn>
 </template>

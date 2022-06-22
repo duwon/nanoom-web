@@ -18,16 +18,22 @@
       </q-item-label>
       <q-item-label
         caption
-        lines="1"
       >
         {{ post.createdAt }}
       </q-item-label>
       <q-item-label
         caption
-        lines="1"
       >
         {{ post.updatedAt }}
       </q-item-label>
+    </q-item-section>
+    <q-item-section
+      side
+    >
+      <q-btn
+        label="update"
+        @click="update"
+      />
     </q-item-section>
 
     <q-item-section side>
