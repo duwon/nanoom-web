@@ -1,45 +1,27 @@
 <template>
-  <div class="shadow-5">
+  <div class="shadow-5 q-mt-md">
     <slide />
   </div>
 
-  <br>
-  <div class="shadow-5">
+  <div class="q-mt-xl text-bold text-h5">
+    SERMON
+  </div>
+  <div class="shadow-5  q-mt-md">
     <sermon />
   </div>
 
-  <br>
-  <div class="shadow-5">
+  <div class="q-mt-xl text-bold text-h5">
+    LOCATION
+  </div>
+  <div class="shadow-5 q-mt-md">
     <location />
   </div>
 
   <q-page
     padding
-    class="app"
+    class="col-12 text-h5 q-ma-lg"
   >
-    <div>
-      <h1> TEST PAGE </h1>
-      <h2> {{ animal }} </h2>
-      <h3> {{ animal }}은 {{ food }}을 좋아합니다.</h3>
-      <img
-        :src="imageSrc"
-      >
-      <hr>
-      <input
-        v-model="food"
-        type="text"
-      >
-      <a
-        :href="googleURL"
-      >Google</a>
-      <br>
-      <h2 :class=" { red: food==='apple'}">
-        원숭이는 {{ food }} 좋아한다.
-      </h2>
-      <h2 :class=" { blue: food==='rice'}">
-        원숭이는 {{ food }} 좋아한다.
-      </h2>
-    </div>
+    나눔의 교회의 홈페이지 방문을 환영합니다.
   </q-page>
 </template>
 
@@ -62,10 +44,6 @@ export default defineComponent({
   },
   data () {
     return {
-      animal: 'monkey',
-      food: '바나나',
-      imageSrc: 'https://placeimg.com/100/100/animal',
-      googleURL: 'https://google.com'
     }
   }
 })
@@ -80,6 +58,9 @@ export default defineComponent({
   color: #2c3e50;
   margin-top: 60px;
   max-width: 1024px
+  }
+  .page {
+    width: 1024px;
   }
   input {
   font-size:20px;

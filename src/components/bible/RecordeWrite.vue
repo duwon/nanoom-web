@@ -116,6 +116,7 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { BibleRecorde, setBibleRecorde } from 'src/models/Bible'
 import { firebaseUser, isSigned } from 'src/composables/useAuth'
+import { uploadUrl } from 'src/boot/fileserver'
 
 const stringOptions = [
   '창세기',
@@ -214,6 +215,7 @@ export default defineComponent({
       sermonTitle,
       sermonChapter,
       options,
+      uploadUrl,
 
       // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-unused-vars
       filterFn (val:string, update:Function, abort:Function) {
@@ -233,7 +235,7 @@ export default defineComponent({
         }
 
         // await axios.post('http://192.168.50.111:4444/upload', formData, {
-        await axios.post('http://192.168.50.111:4444/upload/' + date.formatDate(Date(), 'YYYYMMDD'), formData, {
+        await axios.post(uploadUrl + '/' + date.formatDate(Date(), 'YYYYMMDD'), formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }

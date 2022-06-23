@@ -1,11 +1,10 @@
 import { initializeApp } from 'firebase/app'
 import firebaseConfig from 'app/firebaseConfig'
 import {
-  getAuth,
-  connectAuthEmulator
+  getAuth
 } from 'firebase/auth'
 
-import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
+import { getFirestore } from 'firebase/firestore'
 
 import { getStorage } from 'firebase/storage'
 
@@ -15,11 +14,11 @@ const firebaseApp = initializeApp(firebaseConfig)
 
 const auth = getAuth()
 auth.useDeviceLanguage()
-connectAuthEmulator(auth, 'http://localhost:9099')
+// connectAuthEmulator(auth, 'http://localhost:9099')
 
 // firebaseApps previously initialized using initializeApp()
 const db = getFirestore()
-connectFirestoreEmulator(db, 'localhost', 8081)
+// connectFirestoreEmulator(db, 'localhost', 8081)
 
 // Set the configuration for your app
 // TODO: Replace with your app's config object

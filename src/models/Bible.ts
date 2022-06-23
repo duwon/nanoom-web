@@ -81,7 +81,7 @@ export const updateBibleRecord = (id: string, memo: string) => {
 }
 
 export const deleteBibleRecord = async (data: BibleRecorde) => {
-  const collectionID = date.formatDate(Date(), 'YYYYMMDD-') + data.title
+  const collectionID = date.formatDate(data.createdAt, 'YYYYMMDD-') + data.title
   const ref = doc(db, data.name, collectionID)
   const result = await deleteDoc(ref)
   console.log(result)

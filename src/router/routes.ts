@@ -2,7 +2,7 @@ import { RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: '/test',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/TestPage.vue') }]
   },
@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/ListPage.vue') }]
   },
   {
-    path: '/google',
+    path: '/',
     component: () => import('layouts/GoogleLayout.vue'),
     children: [{ path: '', component: () => import('pages/TestPage.vue') }]
   },
