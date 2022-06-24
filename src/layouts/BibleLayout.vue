@@ -13,12 +13,13 @@
         style="height: 64px"
       >
         <q-btn
+          v-if="$q.screen.lt.sm"
           flat
           dense
           round
           aria-label="Menu"
           icon="menu"
-          class="mobile-only q-mx-md mobile"
+          class="q-mx-md mobile"
           @click="toggleLeftDrawer"
         />
 
@@ -46,10 +47,7 @@
             style="min-width: 100px"
           >
             {{ topmenu.title }}
-            <q-menu
-              anchor="top end"
-              self="top end"
-            >
+            <q-menu>
               <q-list
                 class="text-grey-8"
                 style="min-width: 100px"
@@ -68,6 +66,7 @@
                   v-close-popup
                   clickable
                   aria-hidden="true"
+                  :to="submenu.link"
                 >
                   <q-item-section avatar>
                     <q-icon :name="submenu.icon" />
@@ -85,7 +84,6 @@
         </div>
       </q-toolbar>
     </q-header>
-
     <q-drawer
       v-model="leftDrawerOpen"
       bordered
@@ -100,53 +98,27 @@
         </q-toolbar>
 
         <q-list padding>
-          <q-item
-            v-for="link in links1"
-            :key="link.text"
-            clickable
-            class="GPL__drawer-item"
+          <div
+            v-for="topmenu in topMenu"
+            :key="topmenu.title"
           >
-            <q-item-section avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
+            <q-item
+              v-for="submenu in topmenu.subMenu"
+              :key="submenu.title"
+              clickable
+              class="GPL__drawer-item"
+              :to="submenu.link"
+            >
+              <q-item-section avatar>
+                <q-icon :name="submenu.icon" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ submenu.title }}</q-item-label>
+              </q-item-section>
+            </q-item>
 
-          <q-separator class="q-my-md" />
-
-          <q-item
-            v-for="link in links2"
-            :key="link.text"
-            clickable
-            class="GPL__drawer-item"
-          >
-            <q-item-section avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-separator class="q-my-md" />
-
-          <q-item
-            v-for="link in links3"
-            :key="link.text"
-            clickable
-            class="GPL__drawer-item"
-          >
-            <q-item-section avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-separator class="q-my-md" />
+            <q-separator class="q-my-md" />
+          </div>
         </q-list>
       </q-scroll-area>
     </q-drawer>
@@ -185,62 +157,28 @@ export default {
     }
     return {
       leftDrawerOpen,
-      links1: [
-        { icon: 'list', text: '목록' },
-        { icon: 'add', text: '올리기' }
-      ],
-      links2: [
-        { icon: 'archive', text: '모두 보기' }
-      ],
-      links3: [
-        { icon: 'settings', text: 'Settings' },
-        { icon: 'help', text: 'Help & Feedback' },
-        { icon: 'get_app', text: 'App Downloads' }
-      ],
-      topMenu: [{
-        title: '교회소개',
-        subMenu: [
-          { icon: 'photo_album', title: 'subMenu1', link: '/' },
-          { icon: 'people', title: 'subMenu2', link: '/' },
-          { icon: 'movie', title: 'subMenu3', link: '/' },
-          { icon: 'library_books', title: 'subMenu4', link: '/' },
-          { icon: 'dashboard', title: 'subMenu4', link: '/' },
-          { icon: 'book', title: 'subMenu5', link: '/' }
-        ]
-      },
-      {
-        title: '설교',
-        subMenu: [
-          { icon: 'photo_album', title: 'subMenu6', link: '/' },
-          { icon: 'people', title: 'Shared Album', link: '/' },
-          { icon: 'movie', title: 'Movie', link: '/' },
-          { icon: 'library_books', title: 'Animation', link: '/' },
-          { icon: 'dashboard', title: 'Collage', link: '/' },
-          { icon: 'book', title: 'Photo book', link: '/' }
-        ]
-      },
-      {
-        title: '교육',
-        subMenu: [
-          { icon: 'photo_album', title: 'subMenu6', link: '/' },
-          { icon: 'people', title: 'Shared Album', link: '/' },
-          { icon: 'movie', title: 'Movie', link: '/' },
-          { icon: 'library_books', title: 'Animation', link: '/' },
-          { icon: 'dashboard', title: 'Collage', link: '/' },
-          { icon: 'book', title: 'Photo book', link: '/' }
-        ]
-      },
-      {
-        title: '공동체',
-        subMenu: [
-          { icon: 'photo_album', title: 'subMenu6', link: '/' },
-          { icon: 'people', title: 'Shared Album', link: '/' },
-          { icon: 'movie', title: 'Movie', link: '/' },
-          { icon: 'library_books', title: 'Animation', link: '/' },
-          { icon: 'dashboard', title: 'Collage', link: '/' },
-          { icon: 'book', title: 'Photo book', link: '/' }
-        ]
-      }
+      topMenu: [
+        {
+          title: '성경 읽기',
+          subMenu: [
+            { icon: 'list', title: '목록', link: '/bible/list' },
+            { icon: 'add', title: '올리기', link: '/bible/write' }
+          ]
+        },
+        {
+          title: '모두 보기',
+          subMenu: [
+            { icon: 'archive', title: '모두 보기', link: '/bible' }
+          ]
+        },
+        {
+          title: '기타',
+          subMenu: [
+            { icon: 'settings', title: 'Settings', link: '' },
+            { icon: 'help', title: 'Help & Feedback', link: '' },
+            { icon: 'get_app', title: 'App Downloads', link: '' }
+          ]
+        }
       ],
       toggleLeftDrawer
     }

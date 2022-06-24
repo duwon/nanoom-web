@@ -1,12 +1,14 @@
 <template>
   <div
     v-if="isSigned"
-    class="q-pa-md"
+    class="q-pt-md"
     style="width: 100%"
   >
-    <q-toolbar class="bg-primary text-white shadow-2 text-center">
-      <q-toolbar-title>성경 읽기 목록 </q-toolbar-title>
-    </q-toolbar>
+    <q-card>
+      <q-card-section class="bg-primary text-white shadow-2 text-center text-h5">
+        성경 읽기 목록
+      </q-card-section>
+    </q-card>
     <q-list>
       <RecordeListItemComponent
         v-for="item in items"

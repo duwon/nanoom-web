@@ -13,12 +13,13 @@
         style="height: 64px"
       >
         <q-btn
+          v-if="$q.screen.lt.sm"
           flat
           dense
           round
           aria-label="Menu"
           icon="menu"
-          class="mobile-only q-mx-md mobile"
+          class="q-mx-md mobile"
           @click="toggleLeftDrawer"
         />
 
@@ -46,10 +47,7 @@
             style="min-width: 100px"
           >
             {{ topmenu.title }}
-            <q-menu
-              anchor="top end"
-              self="top end"
-            >
+            <q-menu>
               <q-list
                 class="text-grey-8"
                 style="min-width: 100px"
@@ -100,53 +98,27 @@
         </q-toolbar>
 
         <q-list padding>
-          <q-item
-            v-for="link in links1"
-            :key="link.text"
-            clickable
-            class="GPL__drawer-item"
+          <div
+            v-for="topmenu in topMenu"
+            :key="topmenu.title"
           >
-            <q-item-section avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
+            <q-item
+              v-for="submenu in topmenu.subMenu"
+              :key="submenu.title"
+              clickable
+              class="GPL__drawer-item"
+              :to="submenu.link"
+            >
+              <q-item-section avatar>
+                <q-icon :name="submenu.icon" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ submenu.title }}</q-item-label>
+              </q-item-section>
+            </q-item>
 
-          <q-separator class="q-my-md" />
-
-          <q-item
-            v-for="link in links2"
-            :key="link.text"
-            clickable
-            class="GPL__drawer-item"
-          >
-            <q-item-section avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-separator class="q-my-md" />
-
-          <q-item
-            v-for="link in links3"
-            :key="link.text"
-            clickable
-            class="GPL__drawer-item"
-          >
-            <q-item-section avatar>
-              <q-icon :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-separator class="q-my-md" />
+            <q-separator class="q-my-md" />
+          </div>
         </q-list>
       </q-scroll-area>
     </q-drawer>

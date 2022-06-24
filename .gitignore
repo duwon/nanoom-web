@@ -35,3 +35,4 @@ yarn-error.log*
 firebaseConfig.js
 *.log
 /firebase-data
+firebase-export*

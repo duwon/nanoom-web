@@ -1,11 +1,14 @@
 <template>
   <q-form
     v-if="isSigned"
-    class="q-gutter-md"
+    class="q-pt-md"
     @submit="onSubmit"
     @reset="onReset"
   >
     <q-card>
+      <q-card-section class="bg-primary text-white shadow-2 text-center text-h5">
+        성경 읽기 올리기
+      </q-card-section>
       <q-card-section class="row">
         <q-select
           v-model="sermonTitle"
@@ -17,7 +20,6 @@
           :options="options"
           label="성경"
           hint="성경을 선택하세요"
-          new-value-mode="add"
           class="col-6"
           :rules="[ ruleTitle ]"
           @filter="filterFn"
@@ -115,7 +117,7 @@ import { date } from 'quasar'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { BibleRecorde, setBibleRecorde } from 'src/models/Bible'
-import { firebaseUser, isSigned } from 'src/composables/useAuth'
+import { isSigned, nanoomUser } from 'src/composables/useAuth'
 import { uploadUrl } from 'src/boot/fileserver'
 
 const stringOptions = [
@@ -198,7 +200,7 @@ export default defineComponent({
     const filename = ref('')
     const newFilename = ref('')
     const file = ref(null)
-    const user = ref(firebaseUser)
+    const user = ref(nanoomUser)
     const router = useRouter()
     const options = ref(stringOptions)
     const sermonTitle = ref(null)
@@ -234,7 +236,6 @@ export default defineComponent({
           filename.value = files.name
         }
 
-        // await axios.post('http://192.168.50.111:4444/upload', formData, {
         await axios.post(uploadUrl + '/' + date.formatDate(Date(), 'YYYYMMDD'), formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
@@ -244,7 +245,7 @@ export default defineComponent({
             // 응답 처리
             // console.log(response.data.AudioFile)
             newFilename.value = response.data.AudioFile.newFilename
-            setBibleRecorde(new BibleRecorde(user.value?.email || '', title.value, content.value, filename.value, newFilename.value))
+            setBibleRecorde(new BibleRecorde(user.value?.email || '', user.value?.name || '', title.value, content.value, filename.value, newFilename.value))
             router.push('/bible/list')
           })
           .catch((error) => {

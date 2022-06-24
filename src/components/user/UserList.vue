@@ -4,17 +4,17 @@
     class="q-pa-md"
     style="width: 100%"
   >
-    <q-toolbar class="bg-primary text-white shadow-2 text-center">
-      <q-toolbar-title>목록</q-toolbar-title>
-    </q-toolbar>
+    <q-card>
+      <q-card-section class="bg-primary text-white shadow-2 text-center text-h5">
+        사용자 목록
+      </q-card-section>
+    </q-card>
     <q-list>
-      <q-item
+      <UserListItemComponent
         v-for="item in users"
         :key="item.id"
         :item="item"
-      >
-        {{ item.name }}
-      </q-item>
+      />
     </q-list>
   </div>
   <q-btn @click="getAllData">
@@ -36,10 +36,11 @@ import { ref, defineComponent, onMounted } from 'vue'
 import { QueryDocumentSnapshot } from 'firebase/firestore'
 import { firebaseUser, isSigned } from 'src/composables/useAuth'
 import { UserList, getUser, getAllUser } from 'src/models/User'
+import UserListItemComponent from './UserListItem.vue'
 
 export default defineComponent({
   name: 'UserListComponet',
-  components: { },
+  components: { UserListItemComponent },
   setup () {
     // 변수 정의
     const users = ref<QueryDocumentSnapshot<UserList>[]>([])
@@ -57,6 +58,7 @@ export default defineComponent({
     const getAllData = async () => {
       const querySnapshot = await getAllUser()
       users.value = querySnapshot.docs
+      console.log(users.value[0].data().name)
     }
 
     onMounted(getData)

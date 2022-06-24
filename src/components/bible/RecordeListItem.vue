@@ -86,17 +86,10 @@
         </q-dialog>
       </q-item-section>
     </q-item>
-    <q-item-label>
-      <audio controls>
-        <source
-          :src="directUrl(date.formatDate(recorde.createdAt, 'YYYYMMDD') + '/' + recorde.savedFilename)"
-          type="audio/mpeg"
-          preload="metadata"
-          controls
-        >
-        브라우저가 오디오 재생을 지원하지 않습니다.
-      </audio>
-    </q-item-label>
+    <PlayAudio
+      :audio-src-url="date.formatDate(recorde.createdAt, 'YYYYMMDD') + '/' + recorde.savedFilename"
+    />
+
     <q-separator
       spaced
       inset
@@ -109,7 +102,8 @@ import { defineProps, computed, ref } from 'vue'
 import { date } from 'quasar'
 import { QueryDocumentSnapshot } from 'firebase/firestore'
 import { BibleRecorde, deleteBibleRecord } from 'src/models/Bible'
-import { downloadUrl, directUrl } from 'src/boot/fileserver'
+import { downloadUrl } from 'src/boot/fileserver'
+import PlayAudio from './PlayAudio.vue'
 
 const props = defineProps<{
   item: QueryDocumentSnapshot<BibleRecorde>
