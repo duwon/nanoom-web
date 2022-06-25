@@ -88,6 +88,7 @@
     </q-item>
     <PlayAudio
       :audio-src-url="date.formatDate(recorde.createdAt, 'YYYYMMDD') + '/' + recorde.savedFilename"
+      :size-small="false"
     />
     <q-separator
       spaced

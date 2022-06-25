@@ -32,21 +32,4 @@ const props = defineProps<{
 
 const RecordeList = computed(() => props.items)
 
-//   <q-dialog
-//     v-model="dialogAudio"
-//     full-width
-//   >
-//     <q-card>
-//       <q-card-section>
-//         <div class="text-bold text-center">
-//           {{ item.data().title }}
-//         </div>
-//       </q-card-section>
-//       <q-card-section class="q-pa-none">
-//         <PlayAudio
-//           :audio-src-url="date.formatDate(item.data().createdAt, 'YYYYMMDD') + '/' + item.data().savedFilename"
-//         />
-//       </q-card-section>
-//     </q-card>
-//   </q-dialog>
 </script>
