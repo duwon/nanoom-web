@@ -3,7 +3,7 @@ import { } from 'vue'
 import { auth } from 'src/boot/firebase'
 import {
   GoogleAuthProvider,
-  signInWithRedirect,
+  signInWithPopup,
   signOut
 } from 'firebase/auth'
 import { firebaseUser, useAuth, nanoomUser } from 'src/composables/useAuth'
@@ -96,7 +96,7 @@ const provider = new GoogleAuthProvider()
               flat
               color="primary"
               class="col"
-              @click="signInWithRedirect(auth, provider)"
+              @click="signInWithPopup(auth, provider)"
             />
           </q-card-actions>
 

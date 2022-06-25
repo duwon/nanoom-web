@@ -123,7 +123,7 @@
       >
         <q-btn
           flat
-          @click="signInWithRedirect(auth, provider)"
+          @click="signInWithPopup(auth, provider)"
         >
           <img src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png">
         </q-btn>
@@ -141,7 +141,7 @@ import { useRouter } from 'vue-router'
 
 import { auth } from 'src/boot/firebase'
 import {
-  GoogleAuthProvider, signInWithRedirect
+  GoogleAuthProvider, signInWithPopup
 } from 'firebase/auth'
 
 const stringOptions = [
@@ -186,7 +186,7 @@ export default defineComponent({
       userTitleOption,
       auth,
       provider,
-      signInWithRedirect,
+      signInWithPopup,
       firebaseUser,
       nanoomUser,
 
