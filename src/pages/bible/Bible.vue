@@ -1,28 +1,18 @@
 <template>
   <div>
-    <RecordWrite />
-  </div>
-  <div>
-    <RecordList />
-  </div>
-  <div>
-    <TitleAutoComplete />
+    <UserList />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { date } from 'quasar'
-import RecordList from 'src/components/bible/RecordeList.vue'
-import RecordWrite from 'src/components/bible/RecordeWrite.vue'
-import TitleAutoComplete from 'src/components/bible/TitleAutoComplete.vue'
+import UserList from '../../components/bible/UserList.vue'
 
 export default defineComponent({
   name: 'TestPage',
   components: {
-    RecordList,
-    RecordWrite,
-    TitleAutoComplete
+    UserList
   },
   setup () {
     const formattedString = date.formatDate(Date.now(), 'YYYY-MM-DD')
