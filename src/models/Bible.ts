@@ -35,7 +35,7 @@ export class BibleRecorde {
 
   collectionID () {
     let dateString = date.formatDate(Date(), 'YYYY-MM-DD')
-    if (this.createdAt instanceof Timestamp) {
+    if (this.createdAt !== undefined) {
       dateString = date.formatDate(this.createdAt, 'YYYY-MM-DD')
     }
 
@@ -121,8 +121,7 @@ export const updateBibleRecord = (id: string, memo: string) => {
 }
 
 export const deleteBibleRecord = async (data: BibleRecorde) => {
+  console.log(data.collectionID())
   const ref = doc(db, tableName, data.collectionID())
-  const result = await deleteDoc(ref)
-  console.log(result)
-  return result
+  await deleteDoc(ref)
 }

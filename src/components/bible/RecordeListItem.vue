@@ -113,11 +113,7 @@ const recorde = computed(() => props.item.data())
 
 function deleteBible () {
   deleteBibleRecord(props.item.data())
-    .then((response) => {
-      // 응답 처리
-      displayItem.value = false
-      console.log(response)
-    })
+  displayItem.value = false
 }
 
 const confirm = ref(false)

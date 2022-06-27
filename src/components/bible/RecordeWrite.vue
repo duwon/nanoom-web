@@ -186,9 +186,7 @@ const stringOptions = [
   '요한2서',
   '요한3서',
   '유다서',
-  '요한계시록',
-  'google'
-
+  '요한계시록'
 ]
 
 export default defineComponent({
