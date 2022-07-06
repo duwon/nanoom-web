@@ -6,12 +6,13 @@ import {
 } from 'firebase/auth'
 import { UserList, checkUser } from 'src/models/User'
 
-export const nanoomUser = ref<UserList | null>(null)
+const nanoomUser = ref<UserList | null>(null)
 
-export const firebaseUser = ref<User | null>(null)
-export const isSigned = computed(() => nanoomUser.value !== null)
+const firebaseUser = ref<User | null>(null)
 
-export const useAuth = () => {
+const isSigned = computed(() => nanoomUser.value !== null)
+
+const useAuth = () => {
   onAuthStateChanged(auth, async (user) => {
     firebaseUser.value = user
     if (firebaseUser.value) {
@@ -23,3 +24,5 @@ export const useAuth = () => {
     }
   })
 }
+
+export { useAuth, nanoomUser, firebaseUser, isSigned }

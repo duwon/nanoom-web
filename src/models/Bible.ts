@@ -121,7 +121,6 @@ export const updateBibleRecord = (id: string, memo: string) => {
 }
 
 export const deleteBibleRecord = async (data: BibleRecorde) => {
-  console.log(data.collectionID())
   const ref = doc(db, tableName, data.collectionID())
   await deleteDoc(ref)
 }
