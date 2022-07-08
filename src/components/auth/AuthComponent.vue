@@ -83,7 +83,7 @@ import ForgotPassword from 'src/components/auth/ForgotPassword'
 export default {
   name: 'AuthComponent',
   components: { ForgotPassword },
-  props: ['tab'],
+  props: { tab: { type: String, default: 'login' } },
   data () {
     return {
       formData: {
@@ -114,7 +114,7 @@ export default {
     signInExistingUser (email, password) {
       console.log(auth, email, password)
       signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
+        .then(() => {
           this.$q.notify({ message: 'Sign In Success.' })
           this.$router.push('/test/home')
         })
@@ -123,7 +123,7 @@ export default {
     createUser (email, password) {
       console.log(email, password)
       createUserWithEmailAndPassword(auth, email, password)
-        .then(auth => {
+        .then(() => {
           this.$q.notify({ message: 'Sign In Success.' })
           this.$router.push('/test/home')
         })

@@ -1,8 +1,8 @@
 {
   "name": "nanoom-web",
   "version": "0.0.1",
-  "description": "Nanoom Web",
-  "productName": "Nanoom Web",
+  "description": "나눔의교회 - 두날개로 날아오르는 건강한 교회",
+  "productName": "나눔의교회",
   "author": "duwon <duwon@duwon.net>",
   "private": true,
   "scripts": {

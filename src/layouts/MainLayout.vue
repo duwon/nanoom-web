@@ -12,23 +12,21 @@
         class="GPL__toolbar"
         style="height: 64px"
       >
-        <q-btn
-          v-if="$q.screen.lt.sm"
-          flat
-          dense
-          round
-          aria-label="Menu"
-          icon="menu"
-          class="q-mx-md mobile"
-          @click="toggleLeftDrawer"
-        />
-
         <q-toolbar-title
-
           shrink
           class="row items-center no-wrap justify-center"
         >
-          <img src="icons/favicon-32x32.png"><span class="q-ml-sm text-bold text-h5 ">나눔의교회</span>
+          <q-btn
+            class="q-ml-sm text-bold text-h5"
+            flat
+            to="/"
+          >
+            <img
+              src="icons/favicon-32x32.png"
+              class="q-mr-md"
+            >
+            나눔의교회
+          </q-btn>
         </q-toolbar-title>
 
         <q-space />
@@ -52,20 +50,13 @@
                 class="text-grey-8"
                 style="min-width: 100px"
               >
-                <q-item aria-hidden="true">
-                  <q-item-section
-                    class="text-uppercase text-grey-7"
-                    style="font-size: 1.2rem"
-                  >
-                    {{ topmenu.title }}
-                  </q-item-section>
-                </q-item>
                 <q-item
                   v-for="submenu in topmenu.subMenu"
                   :key="submenu.title"
                   v-close-popup
                   clickable
                   aria-hidden="true"
+                  :to="submenu.link"
                 >
                   <q-item-section avatar>
                     <q-icon :name="submenu.icon" />
@@ -77,6 +68,16 @@
           </q-btn>
         </div>
         <q-space />
+        <q-btn
+          v-if="$q.screen.lt.sm"
+          flat
+          dense
+          round
+          aria-label="Menu"
+          icon="menu"
+          class="q-mx-md mobile"
+          @click="toggleLeftDrawer"
+        />
       </q-toolbar>
     </q-header>
 
@@ -119,12 +120,12 @@
       </q-scroll-area>
     </q-drawer>
 
-    <q-page-container class="__page-container">
-      <q-page>
+    <q-page-container>
+      <q-page class="full-width row wrap content-start justify-center ">
         <router-view />
         <!-- place QPageScroller at end of page -->
         <q-page-scroller
-          position="bottom-right"
+          position="bottom"
           :scroll-offset="150"
           :offset="[18, 18]"
         >
@@ -156,32 +157,32 @@ export default {
       topMenu: [{
         title: '교회소개',
         subMenu: [
-          { icon: 'about', title: '교회소개', link: '/' },
-          { icon: 'people', title: '섬기는 사람들', link: '/' },
-          { icon: 'history', title: '발자취', link: '/' },
-          { icon: 'time', title: '예배시간', link: '/' },
-          { icon: 'map', title: '오시는 길', link: '/' }
+          { icon: 'mdi-church', title: '교회소개', link: '/about' },
+          { icon: 'people', title: '섬기는 사람들', link: '/people' },
+          { icon: 'history', title: '발자취', link: '/history' },
+          { icon: 'mdi-clock', title: '예배시간', link: '/worshiptime' },
+          { icon: 'map', title: '오시는 길', link: '/location' }
         ]
       },
       {
         title: '예배와말씀',
         subMenu: [
-          { icon: 'time', title: '예배시간', link: '/' },
-          { icon: 'people', title: '설교영상', link: '/' }
+          { icon: 'mdi-clock', title: '예배시간', link: '/worshiptime' },
+          { icon: 'mdi-book-cross', title: '설교영상', link: '/sermon' }
         ]
       },
       {
         title: '교육',
         subMenu: [
-          { icon: 'study', title: '제자훈련', link: '/' },
-          { icon: 'group', title: '주일학교', link: '/' }
+          { icon: 'mdi-account-school', title: '제자훈련', link: '/d12' },
+          { icon: 'school', title: '주일학교', link: '/edu' }
         ]
       },
       {
         title: '공동체',
         subMenu: [
-          { icon: 'people', title: '셀모임', link: '/' },
-          { icon: 'people', title: '선교회', link: '/' },
+          { icon: 'people', title: '셀모임', link: '/cell' },
+          { icon: 'people', title: '선교회', link: '/missiongroup' },
           { icon: 'people', title: '기타', link: '/' }
         ]
       }
