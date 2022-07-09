@@ -75,6 +75,7 @@ export default {
     color: #2c3e50;
     font-size: 14px;
   }
+
   .q-table th {
     font-family: "Nanum Square";
     font-size: 14px;

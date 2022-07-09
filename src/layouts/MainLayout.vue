@@ -135,8 +135,18 @@
             color="accent"
           />
         </q-page-scroller>
+
+        <div class="col-12 bg-black text-white q-mt-xl q-pa-md text-center">
+          <div class=" text-h4 ">
+            나눔의교회
+          </div>
+          <div>
+            서울 중구 동호로11길 111 (신당동) 나눔의교회 | TEL :
+          </div>
+        </div>
       </q-page>
     </q-page-container>
+    <q-page-container />
   </q-layout>
 </template>
 
