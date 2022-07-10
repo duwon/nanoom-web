@@ -3,7 +3,16 @@
     교회 소개
   </div>
   <div class="q-mt-xl col-md-7 col-sm-10 col-xs-12">
-    <div class="clearfix" />
+    <!-- 제목부분 -->
+    <h2 class="text-h4 text-bold text-center">
+      교회창립
+    </h2>
+    <hr class="line ">
+    <div class="text-grey-7 text-h6 text-center q-ma-xl">
+      우리교회는 '하나님의 사랑을 함께 나누고 싶어' 1991년 10월 27일 종교개혁주일에 창립한 대한예수교 나눔의교회 장로회(통합) 소속 교회 입니다. <br><br>
+      <q-img :src="require('../../assets/images/about/nanoomFull.jpg')" />
+    </div>
+    <br><br>
 
     <!-- 제목부분 -->
     <h2 class="text-h4 text-bold text-center">
@@ -13,17 +22,17 @@
 
     <!-- 서브 시작 -->
 
-    <div class="q-mt-xl">
+    <div class="q-mt-md">
       <div class="row ">
         <div class="col-md-12  ">
           <h3 class="text-grey-7 text-h4 text-center">
             2022년 표어
           </h3>
           <h2 class="text-h3  text-bold text-center">
-            말씀으로 새롭게 하는 교회
+            복음으로, 교회를 새롭게 세상을 이롭게!
           </h2>
           <p class="text-grey-7 text-h6 text-center">
-            우리교회는 하나님의 임재를 경험한 예배자들이 말씀으로 훈련된 제자가 되어 사랑으로 세상을 섬기고 치유하는 영적 공동체입니다.
+            하나님의 임재를 경험한 예배자들이 말씀으로 훈련된 제자가 되어 사랑으로 세상을 섬기고 치유하는 영적 공동체입니다.
           </p>
         </div><!-- end col -->
 
@@ -68,7 +77,7 @@
 
           <div class="circle-box2">
             <h5 class="text-bold txt-h5">
-              다음세대의 희망이 있는 교회
+              다음세대 희망 있는 교회
             </h5>
             <p class="text-h7">
               가정이 작은 천국이 되도록 가정을 회복
@@ -108,7 +117,10 @@
     </div><!-- end section -->
   </div>
 
-  <section class="bg-vision full-width row wrap content-start justify-center ">
+  <section
+    class="bg-vision full-width row wrap content-start justify-center "
+    :style="{ 'backgroundImage':'url('+require('../../assets/images/about/nanoomWorship.jpg')+')' }"
+  >
     <div class="col-md-7 col-sm-10 col-xs-12">
       <div class="row">
         <div class="col-12 q-mb-md">
@@ -305,7 +317,7 @@ hr.line {
 .bg-vision {
   padding: 100px 0px 100px 0px;
   position: relative;
-  background: #333 url(https://placeimg.com/1000/1000/nature) 50% 0 no-repeat fixed;
+  background: #333 url('../../assets/images/about/nanoomWorship.jpg') 50% 0 no-repeat fixed;
 }
 .bg-vision::before {
   content: "";
