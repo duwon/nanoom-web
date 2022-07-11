@@ -8,15 +8,18 @@
       교회창립
     </h2>
     <hr class="line ">
-    <div class="text-grey-7 text-h6 text-center q-ma-xl">
+    <div class="text-grey-7 text-h6 text-center q-mt-xl">
       우리교회는 '하나님의 사랑을 함께 나누고 싶어' 1991년 10월 27일 종교개혁주일에 창립한 대한예수교 나눔의교회 장로회(통합) 소속 교회 입니다. <br><br>
-      <q-img :src="require('../../assets/images/about/nanoomFull.jpg')" />
+      <q-img
+        :src="require('../../assets/images/about/nanoomFull.jpg')"
+        style="width: 100%;"
+      />
     </div>
     <br><br>
 
     <!-- 제목부분 -->
     <h2 class="text-h4 text-bold text-center">
-      교회비전
+      2022년 표어
     </h2>
     <hr class="line ">
 
@@ -25,9 +28,11 @@
     <div class="q-mt-md">
       <div class="row ">
         <div class="col-md-12  ">
-          <h3 class="text-grey-7 text-h4 text-center">
-            2022년 표어
-          </h3>
+          <img
+            :src="require('../../assets/images/about/watchword_2020.jpg')"
+            style="width: 100%;"
+          >
+
           <h2 class="text-h3  text-bold text-center">
             복음으로, 교회를 새롭게 세상을 이롭게!
           </h2>
@@ -44,7 +49,7 @@
               예배의 감격이 있는 교회
             </h5>
             <p class="text-h7">
-              가정이 작은 천국이 되도록 가정을 회복
+              강한 믿음의 용사, 상한 영혼을 회복
             </p>
           </div><!-- end circle box -->
 
@@ -53,7 +58,7 @@
               말씀이 살아있는 교회
             </h5>
             <p class="text-h7">
-              가정이 작은 천국이 되도록 가정을 회복
+              선한 일을 행할 수 있는 능력 향상
             </p>
           </div><!-- end circle box -->
 
@@ -71,7 +76,7 @@
               봉사와 나눔이 있는 교회
             </h5>
             <p class="text-h7">
-              가정이 작은 천국이 되도록 가정을 회복
+              지역과 세계를 향해 나눔과 섬김
             </p>
           </div><!-- end circle box -->
 
@@ -80,7 +85,7 @@
               다음세대 희망 있는 교회
             </h5>
             <p class="text-h7">
-              가정이 작은 천국이 되도록 가정을 회복
+              아이들의 찬양과 기도 소리가 끊이지 않게
             </p>
           </div><!-- end circle box -->
         </div>

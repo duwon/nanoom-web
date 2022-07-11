@@ -70,21 +70,21 @@ export default {
 </script>
 
 <style>
+@import url(//cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css);
+
   .q-table tbody td {
-    font-family: "NotoSans", "Apple SD Gothic Neo", Dotum,"돋움", Verdana, AppleSDGothicNeo, sans-serif;
+    font-family: "NanumSquareRound";
     color: #2c3e50;
     font-size: 14px;
   }
 
   .q-table th {
-    font-family: "Nanum Square";
     font-size: 14px;
     font-weight: 700;
     background-color: #E9EDF5;
   }
 
   .q-table__title {
-    font-family: "Nanum Square";
     font-size: 23px;
     font-weight: 700;
   }

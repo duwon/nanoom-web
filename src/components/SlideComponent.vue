@@ -19,9 +19,7 @@
       :img-src="slidedata.img"
     >
       <div class="absolute-bottom custom-caption">
-        <div class="text-h3">
-          {{ slidedata.title }}
-        </div>
+        <div class="text-h3" />
         <div class="text-subtitle1">
           {{ slidedata.subtitle }}
         </div>
@@ -46,9 +44,9 @@ export default defineComponent({
   data () {
     return {
       slideData: [
-        { title: 'first', subtitle: '설교', img: require('../assets/images/nanoom1.jpg') },
-        { title: 'second', subtitle: '찬양대', img: require('../assets/images/nanoom2.jpg') },
-        { title: 'third', subtitle: '찬양대', img: require('../assets/images/nanoom3.jpg') },
+        { title: 'first', subtitle: '말씀 선포', img: require('../assets/images/nanoom1.jpg') },
+        { title: 'second', subtitle: '찬양', img: require('../assets/images/nanoom2.jpg') },
+        { title: 'third', subtitle: '찬양', img: require('../assets/images/nanoom3.jpg') },
         { title: 'forth', subtitle: '체육대회', img: require('../assets/images/nanoom4.jpg') }
       ]
     }

@@ -120,7 +120,7 @@
       </q-scroll-area>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="__page-container">
       <q-page class="full-width row wrap content-start justify-center ">
         <router-view />
         <!-- place QPageScroller at end of page -->
@@ -137,11 +137,12 @@
         </q-page-scroller>
 
         <div class="col-12 bg-black text-white q-mt-xl q-pa-md text-center">
-          <div class=" text-h4 ">
-            나눔의교회
-          </div>
+          <q-img
+            :src="require('../assets/images/nanoomLogoBottom.png')"
+            style=" max-width: 300px"
+          />
           <div>
-            서울 중구 동호로11길 111 (신당동) 나눔의교회 | TEL : 02-2238-6868, FAX : 02-2233-0288
+            서울 중구 동호로11길 111 (신당동) 나눔의교회 <br> TEL : 02-2238-6868, FAX : 02-2233-0288
           </div>
         </div>
       </q-page>
@@ -204,6 +205,8 @@ export default {
 </script>
 
 <style lang="sass">
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css)
+
 .GPL
   &__toolbar
     height: 64px
@@ -239,8 +242,6 @@ export default {
       padding-left: 94px
 
 .__page-container
-    display: flex
-    justify-content: center
-    padding: 70px 16px 100px
+    font-family: Arial, 'Nanum Gothic', serif
 
 </style>
