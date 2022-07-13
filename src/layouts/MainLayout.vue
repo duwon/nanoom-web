@@ -169,9 +169,9 @@ export default {
         title: '교회소개',
         subMenu: [
           { icon: 'mdi-church', title: '교회소개', link: '/about' },
+          { icon: 'mdi-account-tie', title: '담임목사', link: '/greeting' },
           { icon: 'people', title: '섬기는 사람들', link: '/people' },
           { icon: 'history', title: '발자취', link: '/history' },
-          { icon: 'mdi-clock', title: '예배시간', link: '/worshiptime' },
           { icon: 'map', title: '오시는 길', link: '/location' }
         ]
       },
@@ -185,8 +185,12 @@ export default {
       {
         title: '교육',
         subMenu: [
-          { icon: 'mdi-account-school', title: '제자훈련', link: '/d12' },
-          { icon: 'school', title: '주일학교', link: '/edu' }
+          { icon: 'mdi-book-education', title: '제자훈련', link: '/d12' },
+          { icon: 'school', title: '영아부', link: '/edu/infant' },
+          { icon: 'school', title: '유치부', link: '/edu/kindergarden' },
+          { icon: 'school', title: '아동부', link: '/edu/children' },
+          { icon: 'school', title: '중고등부', link: '/edu/secondary' },
+          { icon: 'school', title: '청년부', link: '/edu/youth' }
         ]
       },
       {

@@ -13,9 +13,21 @@ const routes: RouteRecordRaw[] = [
       { path: 'location', component: () => import('pages/church/Location.vue') }, // 오시는길
       { path: 'sermon', component: () => import('pages/church/Sermon.vue') }, // 설교영상
       { path: 'd12', component: () => import('pages/church/D12.vue') }, // 제자훈련
-      { path: 'edu', component: () => import('pages/church/Education.vue') }, // 주일학교
       { path: 'cell', component: () => import('pages/church/Cell.vue') }, // 셀모임
-      { path: 'missiongroup', component: () => import('pages/church/MissionGroup.vue') } // 선교회
+      { path: 'missiongroup', component: () => import('pages/church/MissionGroup.vue') }, // 선교회
+      { path: 'greeting', component: () => import('pages/church/Greeting.vue') }, // 담임목사
+      {
+        path: 'edu',
+        component: () => import('pages/church/Education.vue'),
+        children: [
+          { path: 'infant', component: () => import('pages/church/EduInfant.vue') },
+          { path: 'kindergarden', component: () => import('pages/church/EduKindergarden.vue') },
+          { path: 'children', component: () => import('pages/church/EduChildren.vue') },
+          { path: 'secondary', component: () => import('pages/church/EduSecondary.vue') },
+          { path: 'youth', component: () => import('pages/church/EduYouth.vue') }
+        ]
+      } // 주일학교
+
     ]
   },
   {
@@ -43,7 +55,8 @@ const routes: RouteRecordRaw[] = [
       { path: 'home', component: () => import('pages/test/Home.vue'), meta: { requiresAuth: true } },
       { path: 'youtube', component: () => import('components/youtube/Broadcast.vue') },
       { path: 'write', component: () => import('pages/test/WritePage.vue') },
-      { path: 'list', component: () => import('pages/test/ListPage.vue') }
+      { path: 'list', component: () => import('pages/test/ListPage.vue') },
+      { path: 'bar', component: () => import('pages/test/Test.vue') }
     ]
   },
   // Always leave this as last one,

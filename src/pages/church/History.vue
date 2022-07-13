@@ -6,7 +6,7 @@
     <q-tabs
       v-model="tab"
       inline-label
-      class="bg-grey-6 text-white shadow-2"
+      class="bg-primary text-white shadow-3"
     >
       <q-tab
         name="sel1990"
@@ -48,7 +48,7 @@
             {{ sub.date }}
           </div>
           <div
-            class="self-center col-9 q-pl-md q-pb-md"
+            class="self-center col-9 q-pl-md q-pb-md text-h6"
             style="white-space: pre; word-break: break-all; width: ;"
           >
             {{ sub.des }}

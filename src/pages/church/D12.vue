@@ -1,7 +1,7 @@
 <template>
   <q-page
     padding
-    class="text-h5 q-ma-lg "
+    class="text-h5 q-ma-lg col-md-7 col-sm-10 col-xs-12 text-center"
   >
     <div
       class="q-mb-xl text-h4"
@@ -30,8 +30,8 @@
         일하는 교회
       </q-btn>
     </div>
-    <div class="row">
-      <div class="row">
+    <div class="row justify-center">
+      <div class="row q-mt-xl">
         <div>
           <q-btn
             round
@@ -67,7 +67,7 @@
           </q-btn>
         </div>
       </div>
-      <div class="row">
+      <div class="row q-mt-xl">
         <div>
           <q-btn
             round
@@ -103,7 +103,7 @@
           </q-btn>
         </div>
       </div>
-      <div class="row">
+      <div class="row q-mt-xl">
         <div>
           <q-btn
             round

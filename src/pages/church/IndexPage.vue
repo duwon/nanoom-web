@@ -23,6 +23,30 @@
     </div>
   </div>
 
+  <div class="q-mt-xl bg-section full-width row wrap content-start justify-center ">
+    <div class="col-md-7 col-sm-10 col-xs-12">
+      <div class="row justify-center">
+        <div
+          v-for="list in banner"
+          :key="list.name"
+          class="col-lg-2 col-md-3 col-sm-4 col-xs-5 q-pa-xs"
+          @click="linkTo(list.link)"
+        >
+          <q-img
+            :src="list.img"
+            class="center "
+          />
+          <div class="margin-top2 margin-bottom banner-font text-center">
+            {{ list.name }}
+          </div>
+          <p class="text-h6 text-center text-white q-pa-md">
+            {{ list.des }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="q-mt-xl col-md-7 col-sm-10 col-xs-12">
     <div
       class="text-bold text-h4"
@@ -33,13 +57,6 @@
       class="shadow-5 q-mt-md"
     >
       <location />
-    </div>
-
-    <div
-      padding
-      class="text-h5 q-ma-lg col-12 text-center q-pb-xl"
-    >
-      나눔의 교회의 홈페이지 방문을 환영합니다.
     </div>
   </div>
 </template>

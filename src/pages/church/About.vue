@@ -2,7 +2,10 @@
   <div class="q-ma-xl text-h3 text-bold text-center col-12">
     교회 소개
   </div>
-  <div class="q-mt-xl col-md-7 col-sm-10 col-xs-12">
+  <div
+    class="q-mt-xl col-md-7 col-sm-10 col-xs-12 "
+    style="max-width: 1024px;"
+  >
     <!-- 제목부분 -->
     <h2 class="text-h4 text-bold text-center">
       교회창립
@@ -28,22 +31,21 @@
     <div class="q-mt-md">
       <div class="row ">
         <div class="col-md-12  ">
+          <h2 class="text-h4  text-bold text-center">
+            복음으로, 교회를 새롭게 세상을 이롭게!
+          </h2>
           <img
             :src="require('../../assets/images/about/watchword_2020.jpg')"
             style="width: 100%;"
           >
-
-          <h2 class="text-h3  text-bold text-center">
-            복음으로, 교회를 새롭게 세상을 이롭게!
-          </h2>
-          <p class="text-grey-7 text-h6 text-center">
-            하나님의 임재를 경험한 예배자들이 말씀으로 훈련된 제자가 되어 사랑으로 세상을 섬기고 치유하는 영적 공동체입니다.
-          </p>
-        </div><!-- end col -->
+        </div>
 
         <p class="q-mb-md" />
 
-        <div class="fusectionvision">
+        <div
+          v-if="false"
+          class="fusectionvision"
+        >
           <div class="circle-box2">
             <h5 class="text-bold txt-h5">
               예배의 감격이 있는 교회
@@ -126,130 +128,40 @@
     class="bg-vision full-width row wrap content-start justify-center "
     :style="{ 'backgroundImage':'url('+require('../../assets/images/about/nanoomWorship.jpg')+')' }"
   >
-    <div class="col-md-7 col-sm-10 col-xs-12">
+    <div
+      class="col-md-7 col-sm-10 col-xs-12"
+      style="max-width:1024px"
+    >
       <div class="row">
         <div class="col-12 q-mb-md">
           <div class="text-h3 text-center text-white">
-            6대 사역
+            성도의 10가지 수칙
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-6 row q-pa-sm">
+        <div
+          v-for="rule in rule10"
+          :key="rule.num"
+          class="col-md-4 col-sm-6 row q-pa-sm q-pt-md"
+        >
           <div class="col-md-2">
             <q-btn
               flat
               round
               class="bg-white"
             >
-              1
+              {{ rule.num }}
             </q-btn>
           </div>
           <div class="col-md-10 q-pl-md">
             <div class="text-white text-h5 q-pb-sm">
-              영감있는 대그룹 축제예배
+              {{ rule.title }}
             </div>
-            <div class="text-white">
-              하나님의 임재를 경험하는 축제 예배는 건강한 교회가 추구하는 한 쪽 날개입니다.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 row q-pa-sm">
-          <div class="col-md-2">
-            <q-btn
-              flat
-              round
-              class="bg-white"
+            <div
+              class="text-white"
+              style="min-height:50px"
             >
-              2
-            </q-btn>
-          </div>
-          <div class="col-md-10 q-pl-md">
-            <div class="text-white text-h5 q-pb-sm">
-              은사중심적 사역
-            </div>
-            <div class="text-white">
-              은사를 따른 사랑의 섬김으로 사역의 기쁨을 가지고 교회를 건강하게 세워갑니다.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 row q-pa-sm">
-          <div class="col-md-2">
-            <q-btn
-              flat
-              round
-              class="bg-white"
-            >
-              3
-            </q-btn>
-          </div>
-          <div class="col-md-10 q-pl-md">
-            <div class="text-white text-h5 q-pb-sm">
-              전인적인 소그룹 셀모임
-            </div>
-            <div class="text-white">
-              초대교회의 모습을 지향하는 하나님께서 디자인하신 예수생명가족모임입니다.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 row q-pa-sm">
-          <div class="col-md-2">
-            <q-btn
-              flat
-              round
-              class="bg-white"
-            >
-              4
-            </q-btn>
-          </div>
-          <div class="col-md-10 q-pl-md">
-            <div class="text-white text-h5 q-pb-sm">
-              필요중심적 전도
-            </div>
-            <div class="text-white">
-              열린 모임을 통해 복음으로 예비된 영혼을 구원하고 하나님의 일꾼을 발견합니다.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 row q-pa-sm">
-          <div class="col-md-2">
-            <q-btn
-              flat
-              round
-              class="bg-white"
-            >
-              5
-            </q-btn>
-          </div>
-          <div class="col-md-10 q-pl-md">
-            <div class="text-white text-h5 q-pb-sm">
-              열정적인 영성
-            </div>
-            <div class="text-white">
-              구원 받아 하나님의 자녀가 된 그리스도인은 가치변화를 경험하고 열정적인 영성으로 섬깁니다.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 row q-pa-sm">
-          <div class="col-md-2">
-            <q-btn
-              flat
-              round
-              class="bg-white"
-            >
-              6
-            </q-btn>
-          </div>
-          <div class="col-md-10 q-pl-md">
-            <div class="text-white text-h5 q-pb-sm">
-              사역자를 세우는 지도력
-            </div>
-            <div class="text-white">
-              예수님의 12제자 비전을 승계하며 모든 성도가 제자가 되고 제자를 삼기 위해 달려갑니다.
+              {{ rule.des }}
             </div>
           </div>
         </div>
@@ -261,6 +173,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+const rule10 = [
+
+  { num: '1', title: '주일은 주님의 날', des: ' 주일은 반드시 지킵시다(출 20:10).' },
+  { num: '2', title: '십일조는 하나님의 것', des: ' 온전한 십일조를 드립시다(말 3:8-10).' },
+  { num: '3', title: '하나님의 말씀은 영혼의 양식', des: '매일 3장씩, 주일은 5장씩 성경을 읽읍시다(딤후 3:1).' },
+  { num: '4', title: '기도는 영혼의 호흡', des: ' 쉬지 말고 기도합시다(살전 5:17).' },
+  { num: '5', title: '선교는 주님의 지상명령', des: ' 전력을 다하여 전도합시다(행 1:8).' },
+  { num: '6', title: '성도는 주님의 증인', des: ' 행함으로 증거합시다(사 43:10).' },
+  { num: '7', title: '감사는 은혜의 열매', des: ' 범사에 감사합시다(살전 5:18).' },
+  { num: '8', title: '화목은 성도의 단결', des: ' 서로 사랑하기에 힘씁시다(마 5:43-47).' },
+  { num: '9', title: '봉사는 사랑의 실천', des: ' 내가 먼저 앞장섭시다(행 2:44-47).' },
+  { num: '10', title: '가정은 지상의 천국', des: ' 가정예배를 꼭 드립시다(행 10:2).' }
+
+]
 export default defineComponent({
   name: 'AboutPage',
   components: {
@@ -268,6 +194,7 @@ export default defineComponent({
   },
   setup () {
     return {
+      rule10
     }
   },
   data () {

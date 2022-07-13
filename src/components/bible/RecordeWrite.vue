@@ -71,6 +71,10 @@
             />
           </template>
         </q-file>
+        <q-linear-progress
+          v-if="isUploading"
+          indeterminate
+        />
       </q-card-section>
       <q-card-actions>
         <q-space />
@@ -203,6 +207,7 @@ export default defineComponent({
     const options = ref(stringOptions)
     const sermonTitle = ref(null)
     const sermonChapter = ref('')
+    const isUploading = ref(false)
 
     return {
       title,
@@ -216,6 +221,7 @@ export default defineComponent({
       sermonChapter,
       options,
       uploadUrl,
+      isUploading,
 
       // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-unused-vars
       filterFn (val:string, update:Function, abort:Function) {
@@ -234,7 +240,9 @@ export default defineComponent({
           filename.value = files.name
         }
 
+        isUploading.value = true
         await axios.post(uploadUrl + '/' + date.formatDate(Date(), 'YYYYMMDD'), formData, {
+
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -248,6 +256,7 @@ export default defineComponent({
           })
           .catch((error) => {
             // 예외 처리
+            isUploading.value = false
             console.log(error)
           })
       },
