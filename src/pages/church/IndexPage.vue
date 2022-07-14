@@ -23,40 +23,27 @@
     </div>
   </div>
 
-  <div class="q-mt-xl bg-section full-width row wrap content-start justify-center ">
-    <div class="col-md-7 col-sm-10 col-xs-12">
-      <div class="row justify-center">
-        <div
+  <div class="q-mt-xl bg-section full-width row justify-center">
+    <div class="col-md-7 col-sm-10 col-xs-11">
+      <div class="q-col-gutter-sm row items-start justify-center">
+        <q-btn
           v-for="list in banner"
           :key="list.name"
-          class="col-lg-2 col-md-3 col-sm-4 col-xs-5 q-pa-xs"
-          @click="linkTo(list.link)"
+          class="col-md-2 col-sm-3 col-xs-4"
+          :to="list.link"
+          flat
         >
           <q-img
             :src="list.img"
-            class="center "
           />
-          <div class="margin-top2 margin-bottom banner-font text-center">
+          <div
+            class="q-pt-sm text-center banner-font"
+            style="font-size:20px"
+          >
             {{ list.name }}
           </div>
-          <p class="text-h6 text-center text-white q-pa-md">
-            {{ list.des }}
-          </p>
-        </div>
+        </q-btn>
       </div>
-    </div>
-  </div>
-
-  <div class="q-mt-xl col-md-7 col-sm-10 col-xs-12">
-    <div
-      class="text-bold text-h4"
-    >
-      LOCATION
-    </div>
-    <div
-      class="shadow-5 q-mt-md"
-    >
-      <location />
     </div>
   </div>
 </template>
@@ -66,15 +53,16 @@ import { defineComponent } from 'vue'
 import slide from 'src/components/SlideComponent.vue'
 import broadcast from 'src/components/youtube/Broadcast.vue'
 import sermon from 'src/components/youtube/PlaylistSermon.vue'
-import location from 'src/components/DaumMapComponent.vue'
+
 import { useRouter } from 'vue-router'
 
 const banner = [
-  { name: '교회소개', img: 'http://placeimg.com/100/100/any', des: '..', link: 'about' },
-  { name: '예배시간', img: 'http://placeimg.com/101/101/any', des: '예배를 통한 회복이 있는 교회..', link: 'worshiptime' },
-  { name: '담임목사', img: 'http://placeimg.com/102/102/any', des: '..', link: '' },
-  { name: '섬기는 분', img: 'http://placeimg.com/103/103/any', des: '..', link: '' },
-  { name: '주일학교', img: 'http://placeimg.com/104/104/any', des: '..', link: '' }
+  { name: '교회소개', img: require('../../assets/images/banner/church.png'), des: '..', link: 'about' },
+  { name: '예배시간', img: require('../../assets/images/banner/bible.png'), des: '예배를 통한 회복이 있는 교회..', link: 'worshiptime' },
+  { name: '담임목사', img: require('../../assets/images/banner/teacher.png'), des: '..', link: '/greeting' },
+  { name: '섬기는분', img: require('../../assets/images/banner/prayer.png'), des: '..', link: '/people' },
+  { name: '주일학교', img: require('../../assets/images/banner/children.png'), des: '..', link: '/edu/children' },
+  { name: '오시는길', img: require('../../assets/images/banner/search.png'), des: '..', link: '/edu/location' }
 ]
 
 export default defineComponent({
@@ -82,8 +70,8 @@ export default defineComponent({
   components: {
     slide,
     broadcast,
-    sermon,
-    location
+    sermon
+
   },
   setup () {
     const router = useRouter()
@@ -122,6 +110,6 @@ $banner-size: 400
 .bg-section
   padding: 100px 0px 50px 0px
   position: relative
-  background: #333 url('https://placeimg.com/2000/1000/nature') 50% 0 no-repeat fixed
+  background: #333 url('../../assets/images/banner/wheat-g7645581f9_1920.jpg') 50% 0 no-repeat fixed
 
 </style>
