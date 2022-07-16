@@ -26,23 +26,28 @@
   <div class="q-mt-xl bg-section full-width row justify-center">
     <div class="col-md-7 col-sm-10 col-xs-11">
       <div class="q-col-gutter-sm row items-start justify-center">
-        <q-btn
+        <q-intersection
           v-for="list in banner"
           :key="list.name"
+          transition="scale"
           class="col-md-2 col-sm-3 col-xs-4"
-          :to="list.link"
-          flat
         >
-          <q-img
-            :src="list.img"
-          />
-          <div
-            class="q-pt-sm text-center banner-font"
-            style="font-size:20px"
+          <q-btn
+
+            :to="list.link"
+            flat
           >
-            {{ list.name }}
-          </div>
-        </q-btn>
+            <q-img
+              :src="list.img"
+            />
+            <div
+              class="q-pt-sm text-center banner-font"
+              style="font-size:20px"
+            >
+              {{ list.name }}
+            </div>
+          </q-btn>
+        </q-intersection>
       </div>
     </div>
   </div>
@@ -96,11 +101,6 @@ $banner-size: 400
 
 @media (min-width:320px) and (max-width:768px)
   $banner-size: (map-get($sizes, "sm") - 0.02) !default
-
-.banner-box
-  background-color: grey
-  min-width: 200px
-  margin-bottom: 1px
 
 .banner-font
   font-family: 'Black Han Sans', sans-serif

@@ -32,12 +32,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import edu from 'src/components/church/EducationDisplay.vue'
-import { METHODS } from 'http'
 
 const infant = {
   subject: '영아부',
   img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  slogan: '표어 또는 주제 - 하나님깨 영광을 - ',
   time: '주일 오전 11시',
   location: '중1층 영아부실',
   serving: [
@@ -57,7 +56,7 @@ const infant = {
 const kindergarden = {
   subject: '유치부',
   img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  slogan: '표어 또는 주제 - 하나님깨 영광을 - ',
   time: '주일 오전 11시',
   location: '4층 유치부실',
   serving: [
@@ -78,7 +77,7 @@ const kindergarden = {
 const children = {
   subject: '아동부',
   img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  slogan: '표어 또는 주제 - 하나님깨 영광을 - ',
   time: '주일 오전 11시',
   location: '4층 아동부실',
   serving: [
@@ -103,7 +102,7 @@ const children = {
 const secondary = {
   subject: '중고등부',
   img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  slogan: '표어 또는 주제 - 하나님깨 영광을 - ',
   time: '주일 오전 11시',
   location: '3층 중고등부실',
   serving: [
@@ -128,7 +127,7 @@ const secondary = {
 const youth = {
   subject: '청년부',
   img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  slogan: '표어 또는 주제 - 하나님깨 영광을 - ',
   time: '주일 오후 1시',
   location: '본당',
   serving: [
@@ -148,52 +147,36 @@ const youth = {
 }
 
 export default defineComponent({
-  name: 'EducationPage',
   components: {
     edu
   },
   setup () {
     const eduContent = ref(infant)
-
     return {
       eduContent
     }
   },
   created () {
-    // watch the params of the route to fetch the data again
-    this.$watch(
-      () => this.$route.params,
-      () => {
-        this.fetchData()
-      },
-      // fetch the data when the view is created and the data is
-      // already being observed
-      { immediate: true }
-    )
-  },
-  methods: {
-    fetchData () {
-      switch (this.$route.params.id) {
-        case 'infant':
-          this.eduContent = infant
-          break
+    switch (this.$route.params.id) {
+      case 'infant':
+        this.eduContent = infant
+        break
 
-        case 'kindergarden':
-          this.eduContent = kindergarden
-          break
+      case 'kindergarden':
+        this.eduContent = kindergarden
+        break
 
-        case 'children':
-          this.eduContent = children
-          break
+      case 'children':
+        this.eduContent = children
+        break
 
-        case 'secondary':
-          this.eduContent = secondary
-          break
+      case 'secondary':
+        this.eduContent = secondary
+        break
 
-        case 'youth':
-          this.eduContent = youth
-          break
-      }
+      case 'youth':
+        this.eduContent = youth
+        break
     }
   }
 })

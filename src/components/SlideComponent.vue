@@ -44,10 +44,10 @@ export default defineComponent({
   data () {
     return {
       slideData: [
-        { title: 'first', subtitle: '말씀 선포', img: require('../assets/images/nanoom1.jpg') },
-        { title: 'second', subtitle: '찬양', img: require('../assets/images/nanoom2.jpg') },
-        { title: 'third', subtitle: '찬양', img: require('../assets/images/nanoom3.jpg') },
-        { title: 'forth', subtitle: '체육대회', img: require('../assets/images/nanoom4.jpg') }
+        { title: 'first', subtitle: '말씀 선포', img: require('../assets/images/slide/nanoom1.jpg') },
+        { title: 'second', subtitle: '찬양', img: require('../assets/images/slide/nanoom2.jpg') },
+        { title: 'third', subtitle: '찬양', img: require('../assets/images/slide/nanoom3.jpg') },
+        { title: 'forth', subtitle: '체육대회', img: require('../assets/images/slide/nanoom4.jpg') }
       ]
     }
   }

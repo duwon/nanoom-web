@@ -1,20 +1,20 @@
 <template>
   <div class="q-ma-xl text-h3 text-bold text-center col-12">
-    {{ content.subject }}
+    {{ edu.subject }}
   </div>
   <div
     class="text-h5 q-ma-lg col-md-7 col-sm-10 col-xs-12"
     style="max-width:1024px;"
   >
     <q-img
-      :src="content.img"
+      :src="edu.img"
       :ratio="16/9"
     >
       <div
         class="desktop-only bg-light-green-6 absolute-bottom text-center"
         style="font-size: 100%"
       >
-        {{ content.slogan }}
+        {{ edu.slogan }}
       </div>
     </q-img>
 
@@ -22,7 +22,7 @@
       class="mobile-only q-mt-md bg-light-green-6 text-center"
       style="font-size: 100%"
     >
-      {{ content.slogan }}
+      {{ edu.slogan }}
     </div>
 
     <div class="q-pa-md" />
@@ -35,7 +35,7 @@
           size="32px"
           color="secondary"
         />
-        예배시간 : {{ content.time }}
+        예배시간 : {{ edu.time }}
       </div>
 
       <div class="col-md-5 col-sm-5 col-xs-11 q-ma-md text-weight-bold">
@@ -44,7 +44,7 @@
           size="32px"
           color="secondary"
         />
-        장소 : {{ content.location }}
+        장소 : {{ edu.location }}
       </div>
 
       <div class="col-md-5 col-sm-5 col-xs-11 q-ma-md ">
@@ -58,7 +58,7 @@
         </div>
         <div class="q-ml-lg text-h6 q-mt-sm">
           <div
-            v-for="list in content.serving"
+            v-for="list in edu.serving"
             :key="list.title"
           >
             {{ list.title }} : {{ list.name }}
@@ -78,7 +78,7 @@
       </div>
       <div class="q-col-gutter-md row items-start">
         <q-intersection
-          v-for="photo in content.activityImg"
+          v-for="photo in edu.activityImg"
           :key="photo.title"
           transition="fade"
           class="col-md-4 col-sm-6 col-xs-12"
@@ -96,39 +96,39 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-const content = {
-  subject: '아동부',
-  img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님깨 영광을 - ',
-  time: '주일 오전 11시',
-  location: '4층 아동부실',
-  serving: [
-    { title: '지도', name: '유귀귀 목사' },
-    { title: '부장', name: '최종범 안수집사' },
-    { title: '총무', name: '박경미 집사' },
-    { title: '회계', name: '김석정 집사' },
-    { title: '서기', name: '한정옥 집사' },
-    { title: '반주', name: '박재현 형제' }
-  ],
-  activityImg: [
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' }
-  ]
-}
-
 export default defineComponent({
   name: 'EducationPage',
   components: {
 
   },
+  props: {
+    edu: {
+      type: Object,
+      default () {
+        return {
+          subject: '부서명',
+          img: 'https://placeimg.com/1000/1000/nature',
+          slogan: '교육부서 목표 또는 지도방침',
+          time: '주일 오전 11시',
+          location: '장소',
+          serving: [
+            { title: '지도', name: '유귀귀 목사' },
+            { title: '부장', name: '최종범 안수집사' },
+            { title: '총무', name: '박경미 집사' },
+            { title: '회계', name: '김석정 집사' },
+            { title: '서기', name: '한정옥 집사' },
+            { title: '반주', name: '박재현 형제' }
+          ],
+          activityImg: [
+            { title: '1', src: 'https://placeimg.com/500/300/nature' },
+            { title: '1', src: 'https://placeimg.com/500/300/nature' }
+          ]
+        }
+      }
+    }
+  },
   setup () {
     return {
-      content
     }
   },
   data () {

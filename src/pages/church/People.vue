@@ -8,13 +8,13 @@
       :key="group.title"
       class="row"
     >
-      <div class="q-mt-xl q-ml-md text-h4 text-bold col-12">
+      <div class="q-mt-xl q-pl-md text-h4 text-bold col-12">
         {{ group.title }}
       </div>
       <div
         v-for="people in group.people"
-        :key="people.name"
-        class="q-pa-sm col-md-3 col-sm-4 col-xs-10"
+        :key="people"
+        class="q-pa-sm col-md-3 col-sm-4 col-xs-6"
       >
         <q-card>
           <q-img
@@ -22,7 +22,7 @@
             :ratio="1"
           />
           <q-card-section>
-            <div class="text-h5 text-bold">
+            <div class="text-h6 text-bold">
               {{ people.name }}
             </div>
             <div class="text-subtitle1 text-bold">

@@ -138,7 +138,7 @@
 
         <div class="col-12 bg-black text-white q-mt-xl q-pa-md text-center">
           <q-img
-            :src="require('../assets/images/nanoomLogoBottom.png')"
+            :src="require('../assets/images/nanoomLogoBottom2.png')"
             style=" max-width: 300px"
           />
           <div>
@@ -153,6 +153,10 @@
 
 <script>
 import { ref } from 'vue'
+
+window.addEventListener('load', function () {
+  setTimeout(scrollTo, 0, 0, 1)
+}, false)
 
 export default {
   name: 'GooglePhotosLayout',
