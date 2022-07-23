@@ -30,6 +30,18 @@ const routes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: '/board',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/bbs/DocumentsList.vue') },
+      { path: 'write', component: () => import('pages/bbs/DocumentsWrite.vue') },
+      { path: 'write/:category', component: () => import('pages/bbs/DocumentsWrite.vue') },
+      { path: 'detail', component: () => import('components/bbs/DocumentsDetail.vue') },
+      { path: ':category', component: () => import('pages/bbs/DocumentsList.vue') },
+      { path: ':category/:id', component: () => import('pages/bbs/DocumentsView.vue') }
+    ]
+  },
+  {
     path: '/user',
     component: () => import('layouts/BibleLayout.vue'),
     children: [
@@ -44,6 +56,27 @@ const routes: RouteRecordRaw[] = [
       { path: '', component: () => import('pages/test/TestPage.vue') },
       { path: ':id', component: () => import('pages/test/TestPage.vue') },
       { path: 'auth', component: () => import('pages/test/Auth.vue') },
+      { path: 'home', component: () => import('pages/test/Home.vue'), meta: { requiresAuth: true } },
+      { path: 'youtube', component: () => import('components/youtube/Broadcast.vue') },
+      { path: 'write', component: () => import('pages/test/WritePage.vue') },
+      { path: 'list', component: () => import('pages/test/ListPage.vue') },
+      { path: 'bar', component: () => import('pages/test/Bar.vue') }
+    ]
+  },
+  {
+    path: '/auth',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: 'login', component: () => import('pages/auth/LoginPage.vue') },
+      { path: 'join', component: () => import('pages/auth/SignInPage.vue') }
+    ]
+  },
+  {
+    path: '/admin',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/admin/Index.vue') },
+      { path: ':id', component: () => import('pages/test/TestPage.vue') },
       { path: 'auth', component: () => import('pages/test/Auth.vue') },
       { path: 'home', component: () => import('pages/test/Home.vue'), meta: { requiresAuth: true } },
       { path: 'youtube', component: () => import('components/youtube/Broadcast.vue') },

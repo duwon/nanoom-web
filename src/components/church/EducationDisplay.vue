@@ -76,18 +76,19 @@
         />
         활동 사진
       </div>
-      <div class="q-col-gutter-md row items-start">
-        <q-intersection
+      <div class="q-col-gutter-md row justify-center">
+        <div
           v-for="photo in edu.activityImg"
           :key="photo.title"
-          transition="fade"
-          class="col-md-4 col-sm-6 col-xs-12"
+          class="col-md-4 col-sm-6 col-xs-11"
         >
-          <q-img
-            :src="photo.src"
-            :ratio="4/3"
-          />
-        </q-intersection>
+          <q-card>
+            <q-img
+              :src="photo.src"
+              :ratio="4/3"
+            />
+          </q-card>
+        </div>
       </div>
     </div>
   </div>
@@ -109,15 +110,15 @@ export default defineComponent({
           subject: '부서명',
           img: 'https://placeimg.com/1000/1000/nature',
           slogan: '교육부서 목표 또는 지도방침',
-          time: '주일 오전 11시',
+          time: '시간',
           location: '장소',
           serving: [
-            { title: '지도', name: '유귀귀 목사' },
-            { title: '부장', name: '최종범 안수집사' },
-            { title: '총무', name: '박경미 집사' },
-            { title: '회계', name: '김석정 집사' },
-            { title: '서기', name: '한정옥 집사' },
-            { title: '반주', name: '박재현 형제' }
+            { title: '지도', name: '이름' },
+            { title: '부장', name: '이름' },
+            { title: '총무', name: '이름' },
+            { title: '회계', name: '이름' },
+            { title: '서기', name: '이름' },
+            { title: '반주', name: '이름' }
           ],
           activityImg: [
             { title: '1', src: 'https://placeimg.com/500/300/nature' },

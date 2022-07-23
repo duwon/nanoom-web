@@ -55,6 +55,11 @@ export default defineComponent({
     }
   }
 })
+
+// 장로회신학대학교 신학대학원 교역학 석사(M.Div)
+// 한남대학교 영어영문학과 학사
+// 영락고등학교 교목실장
+// 나눔의 교회 담임목사
 </script>
 
 <style>

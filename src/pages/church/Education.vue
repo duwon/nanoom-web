@@ -1,38 +1,10 @@
 <template>
   <edu :edu="eduContent" />
-
-  <div
-    class="q-pa-md"
-    style="max-width:1024px"
-  >
-    <div class="row justify-center q-gutter-sm">
-      <q-intersection
-        v-for="index in 60"
-        :key="index"
-        transition="scale"
-        class="example-item"
-      >
-        <q-card class="q-ma-sm">
-          <img src="https://cdn.quasar.dev/img/mountains.jpg">
-
-          <q-card-section>
-            <div class="text-h6">
-              Card #{{ index }}
-            </div>
-            <div class="text-subtitle2">
-              by John Doe
-            </div>
-          </q-card-section>
-        </q-card>
-      </q-intersection>
-    </div>
-  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import edu from 'src/components/church/EducationDisplay.vue'
-import { METHODS } from 'http'
 
 const infant = {
   subject: '영아부',
@@ -56,8 +28,8 @@ const infant = {
 
 const kindergarden = {
   subject: '유치부',
-  img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  img: require('../../assets/images/edu/kindergarden/main.jpg'),
+  slogan: '복음으로 교회를 새롭게 세상을 이롭게',
   time: '주일 오전 11시',
   location: '4층 유치부실',
   serving: [
@@ -65,20 +37,32 @@ const kindergarden = {
     { title: '부장', name: '홍은숙 권사' },
     { title: '총무', name: '구수진 집사' },
     { title: '서기', name: '김미애 집사' },
-    { title: '반주', name: '나예은' }
+    { title: '반주', name: '나예은 자매' }
   ],
   activityImg: [
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' }
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_01.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_02.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_03.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_04.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_05.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_06.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_07.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_08.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_09.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_10.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_11.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_12.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_13.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_14.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/kindergarden/kindergarden_15.jpg') }
+
   ]
 }
 
 const children = {
   subject: '아동부',
-  img: 'https://placeimg.com/1000/1000/nature',
-  slogan: '표어 또는 주제 - 하나님께 영광을 - ',
+  img: require('../../assets/images/edu/children/main.jpg'),
+  slogan: '예수님의 사랑으로 변화되는 아동부',
   time: '주일 오전 11시',
   location: '4층 아동부실',
   serving: [
@@ -90,13 +74,11 @@ const children = {
     { title: '반주', name: '박재현 형제' }
   ],
   activityImg: [
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' },
-    { title: '1', src: 'https://placeimg.com/500/300/nature' }
+    { title: '활동', src: require('../../assets/images/edu/children/children_117.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/children/children_123.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/children/children_141.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/children/children_128.jpg') },
+    { title: '활동', src: require('../../assets/images/edu/children/children_201.jpg') }
   ]
 }
 
@@ -199,9 +181,3 @@ export default defineComponent({
 })
 
 </script>
-
-<style lang="sass" scoped>
-.example-item
-  height: 290px
-  width: 300px
-</style>

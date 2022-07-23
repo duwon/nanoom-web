@@ -17,8 +17,8 @@
       대중교통
     </h2>
     <hr class="line ">
-    <div class="text-center q-mt-md row items-start q-gutter-md justify-center">
-      <q-card class="col-md-5 col-sm-5 col-xs-11">
+    <div class="text-center q-mt-md row q-gutter-col-md justify-center">
+      <q-card class="q-ma-md col-md-5 col-sm-5 col-xs-11">
         <q-card-section class="bg-primary text-white">
           <div class="text-h6">
             지하철

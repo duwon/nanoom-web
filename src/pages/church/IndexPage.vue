@@ -67,7 +67,7 @@ const banner = [
   { name: '담임목사', img: require('../../assets/images/banner/teacher.png'), des: '..', link: '/greeting' },
   { name: '섬기는분', img: require('../../assets/images/banner/prayer.png'), des: '..', link: '/people' },
   { name: '주일학교', img: require('../../assets/images/banner/children.png'), des: '..', link: '/edu/children' },
-  { name: '오시는길', img: require('../../assets/images/banner/search.png'), des: '..', link: '/edu/location' }
+  { name: '오시는길', img: require('../../assets/images/banner/search.png'), des: '..', link: '/location' }
 ]
 
 export default defineComponent({
