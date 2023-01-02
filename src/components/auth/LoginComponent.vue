@@ -98,7 +98,7 @@ export default defineComponent({
 
         axios(config)
           .then(function (response) {
-            $q.cookies.set('x-access-token', response.data.token, { expires: '1d', path: '/', domain: '192.168.50.111' })
+            $q.cookies.set('x-access-token', response.data.token, { expires: '1d', path: '/', domain: 'nanoom.org' })
             checkToken()
           })
           .catch(function (error) {

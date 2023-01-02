@@ -22,7 +22,7 @@
 
     <!-- 제목부분 -->
     <h2 class="text-h4 text-bold text-center">
-      2022년 표어
+      2023년 표어
     </h2>
     <hr class="line ">
 
@@ -32,10 +32,10 @@
       <div class="row ">
         <div class="col-md-12  ">
           <h2 class="text-h4  text-bold text-center">
-            복음으로, 교회를 새롭게 세상을 이롭게!
+            너와 네 집이 구원을 받으리라
           </h2>
           <img
-            :src="require('../../assets/images/about/watchword_2020.jpg')"
+            :src="require('../../assets/images/about/watchword_2023.jpg')"
             style="width: 100%;"
           >
         </div>
