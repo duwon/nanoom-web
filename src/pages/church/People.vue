@@ -57,15 +57,14 @@ export default defineComponent({
           people: [
             { name: '유귀귀 목사', img: require('../../assets/images/people/2020_paster_yougigi.jpg'), title: '부목사', etc: '' },
             { name: '김상욱 목사', img: require('../../assets/images/people/2021_paster_kim.jpg'), title: '부목사', etc: '' },
-            { name: '송병주 전도사', img: require('../../assets/images/people/2018_edu_songbj.jpg'), title: '교육전도사', etc: '' },
-            { name: '정혜연 전도사', img: require('../../assets/images/people/2019_edu_jeonghy.jpg'), title: '교육전도사', etc: '' },
-            { name: '송경미 전도사', img: require('../../assets/images/people/2020_edu_songgm.jpg'), title: '교육전도사', etc: '' }
+            { name: '이은선 목사', img: require('../../assets/images/people/2023_paster_leees.jpg'), title: '교육목사', etc: '' },
+            { name: '송경미 전도사', img: require('../../assets/images/people/2020_edu_songgm.jpg'), title: '교육전도사', etc: '' },
+            { name: '김은수 전도사', img: require('../../assets/images/people/2023_edu_kimes.jpg'), title: '교육전도사', etc: '' }
           ]
         },
         {
           title: '장로',
           people: [
-            { name: '노춘식 장로', img: require('../../assets/images/people/elder_2006_nohcs.jpg'), title: '장로', etc: '' },
             { name: '김용선 장로', img: require('../../assets/images/people/elder_2011_kimys.jpg'), title: '장로', etc: '' },
             { name: '설양길 장로', img: require('../../assets/images/people/elder_2018_seolyg.jpg'), title: '장로', etc: '' },
             { name: '유영종 장로', img: require('../../assets/images/people/elder_2018_youyg.jpg'), title: '장로', etc: '' }
